@@ -1,0 +1,186 @@
+import { StatusBar } from 'expo-status-bar'
+import React, { useState } from 'react'
+import { Image, Text, View, Pressable, ScrollView } from 'react-native'
+import logo from '../assets/images/LOGO.png';
+import { Dimensions } from 'react-native';
+import { Surface, TextInput, Button } from "react-native-paper";
+import { StyleSheet } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+
+export default function LoginScreen({ navigation }) {
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
+    const [secure, setSecure] = useState(true);
+    return (
+        <View>
+            <StatusBar backgroundColor="#013459" style="light" />
+            <View style={{
+                backgroundColor: '#024f87',
+                height: '100%',
+                position: 'relative',
+                // marginTop: 30
+            }}>
+                <Image source={logo} style={{
+                    position: 'absolute',
+                    top: 15,
+                    left: 70,
+                    width: 250,
+                    height: 250
+                }} />
+                <View style={{
+                    position: 'absolute',
+                    top: 265,
+                    backgroundColor: '#fff',
+                    width: windowWidth,
+                    height: windowHeight,
+                    borderTopLeftRadius: 30,
+                    borderTopRightRadius: 30,
+                }}>
+                    <View style={{
+                        paddingTop: 20,
+                        paddingLeft: 15, paddingRight: 15
+                    }}>
+                        <Text style={{
+                            fontWeight: 'bold',
+                            fontSize: 25,
+                            color: '#000',
+                            paddingBottom: 5,
+                            textAlign: 'center',
+
+                        }}>Đăng nhập</Text>
+                        <Surface>
+                            <TextInput
+                                style={styles.inputStyle}
+                                mode="text"
+                                label="Số điện thoại"
+                                theme={{
+                                    colors: { primary: "black" },
+                                }}
+                                right={
+                                    <TextInput.Icon name="phone" size={24} color='#024f87' />
+                                }
+                                value={phone}
+                                onChangeText={(phone) => setPhone(phone)}
+                            />
+                        </Surface>
+                        <Surface
+                            style={{
+                                marginTop: 10,
+                            }}
+                        >
+                            <TextInput
+                                style={styles.inputStyle}
+                                mode="text"
+                                secureTextEntry={secure}
+                                label="Mật khẩu"
+                                theme={{
+                                    colors: { primary: "black" },
+                                }}
+                                right={
+                                    secure === true ? (
+                                        <TextInput.Icon
+                                            onPress={() => setSecure(!secure)}
+                                            name="eye"
+                                            color='#024f87'
+                                        />
+                                    ) : (
+                                        <TextInput.Icon
+                                            onPress={() => setSecure(!secure)}
+                                            name="eye-off"
+                                            color='#024f87'
+                                        />
+                                    )
+                                }
+                                value={password}
+                                onChangeText={(password) => setPassword(password)}
+                            />
+                        </Surface>
+                        {/* <View style={{ flexDirection: 'row' }}> */}
+                        <Pressable>
+                            <Text style={{
+                                margin: 10,
+
+                                color: '#1e88e5',
+                                fontSize: 13,
+                            }}>Quên mật khẩu ?</Text>
+                        </Pressable>
+                        <Pressable
+                            style={styles.buttonStyle}
+                            onPress={() => {
+                                navigation.push('MainScreen');
+                            }}
+                        >
+                            <Text style={{
+                                textAlign: 'center',
+                                color: 'white',
+                                fontSize: 15,
+
+                            }}>Đăng nhập</Text>
+                        </Pressable>
+
+                        <Pressable
+                            onPress={() => {
+                                navigation.push('Signup');
+                            }}
+                        >
+                            <Text style={{
+                                marginTop: 10,
+                                textAlign: 'center',
+                                color: 'black',
+                                fontSize: 13,
+                            }}>Bạn chưa có tài khoản ? <Text style={{
+                                color: '#1e88e5',
+                            }}>Đăng kí</Text></Text>
+                        </Pressable>
+
+                        {/* </View> */}
+
+
+
+
+                        {/* <Pressable style={{
+                            backgroundColor: '#024f87',
+                            width: 150,
+                            height: 50,
+                            borderRadius: 10,
+                            // marginLeft: windowWidth/4
+                        }}
+                            onPress={() => {
+                                navigation.push('MainScreen');
+                            }}
+                        >
+                            <Text style={{
+                                color: '#fff',
+                                fontSize: 20,
+                                textAlign: 'center',
+                                paddingTop: 10,
+                                // textDecorationLine: "underline",
+                                // textDecorationStyle: "solid",
+                                // textDecorationColor: "#000",
+                            }}>Gửi mã OTP </Text>
+                        </Pressable> */}
+                    </View>
+
+                </View>
+
+            </View>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    inputStyle: {
+        backgroundColor: '#fff',
+    },
+    buttonStyle: {
+        backgroundColor: '#ff8224',
+        marginTop: 10,
+        height: 45,
+        // width: 160,
+        paddingTop: 11.3,
+        borderRadius: 4,
+    },
+})
