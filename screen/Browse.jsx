@@ -233,7 +233,7 @@ export default function Browse({ navigation }) {
                     •  Vào lúc 5:00AM 19/09/2021 đã mua 100 bao gạo, mỗi bao 50kg giá 500.000VNĐ/bao tại tạp hóa Phương Linh Quận 9 TP HCM. Tổng cộng 50,000,000 VNĐ</Text>
 
             </View>
-            <View style={{ marginLeft: 109, marginTop: 30 }}>
+            <View style={{ marginLeft: 109, marginTop: 24 }}>
                 <Text style={{ color: 'red' }}>Hoạt động này đã bị từ chối</Text>
             </View>
 

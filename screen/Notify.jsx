@@ -279,7 +279,7 @@ export default function Notify({ navigation }) {
 
             </Pressable>
             <Pressable onPress={() => {
-                navigation.push('Browse')
+                navigation.push('Hoạt động của bạn')
             }} style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',

@@ -20,6 +20,7 @@ import UpdateCharity from "./screen/UpdateCharity";
 import VerifyAccount from "./screen/VerifyAccount";
 import Browse from "./screen/Browse";
 import CharityDetail2 from "./screen/CharityDetail2";
+import ActivityDetail1 from "./screen/ActivityDetail1";
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,11 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="ActivityDetail1"
+          component={ActivityDetail1}
+          options={{ title: 'Chi tiết hoạt động' }}
+        />
+        <Stack.Screen
           name="VerifyAccount"
           component={VerifyAccount}
           options={{ headerShown: false }}
@@ -43,9 +49,9 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Browse"
+          name="Hoạt động của bạn"
           component={Browse}
-          options={{ headerShown: false }}
+          options={{ headerShown: true }}
         />
         <Stack.Screen
           name="UpdateChariry"
