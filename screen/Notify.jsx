@@ -150,7 +150,7 @@ export default function Notify({ navigation }) {
                                 width: 250,
                                 lineHeight: 24,
                                 color: 'black'
-                            }}>Hoạt động của bạn đang chờ phê duyệt <Text style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Tiếp Tế Lương Thực Cho TP.HCM</Text> </Text>
+                            }}>Hoạt động của bạn đã được phê duyệt <Text style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Tiếp Tế Lương Thực Cho TP.HCM</Text> </Text>
 
                         </View>
                         <Text style={{

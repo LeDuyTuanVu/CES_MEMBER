@@ -147,6 +147,26 @@ export default function ActivityDetail1(props) {
                     268 Tô Hiến Thành, Phường 15, Quận 10, Thành phố Hồ Chí Minh</Text>
             </View>
             <View style={{
+                display: 'flex',
+                flexDirection: 'row',
+                paddingLeft: 20,
+                paddingBottom: 9,
+            }}>
+                <AntDesign name="filetext1" size={24} color="#0F6657" />
+                <Text style={{
+                    fontWeight: 'bold',
+                    marginLeft: 5,
+                    fontSize: 15
+                }}>Số lượng:</Text>
+                <Text style={{
+                    marginLeft: 5,
+                    fontSize: 15,
+                    paddingRight: 20
+                }}>
+                    5 xe tải thùng loại 0.5 - 1 tấn</Text>
+
+            </View>
+            <View style={{
                 paddingBottom: 10
             }}>
                 <View style={{
@@ -159,8 +179,26 @@ export default function ActivityDetail1(props) {
 
                         marginLeft: 5,
                         fontSize: 15
-                    }}><Text style={{ fontWeight: 'bold', }}>Thời gian: </Text>
+                    }}><Text style={{ fontWeight: 'bold', }}>Thời gian bắt đầu: </Text>
                         18/09/2021</Text>
+                </View>
+
+            </View>
+            <View style={{
+                paddingBottom: 10
+            }}>
+                <View style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    paddingLeft: 20
+                }}>
+                    <AntDesign name="clockcircleo" size={24} color="#0F6657" />
+                    <Text style={{
+
+                        marginLeft: 5,
+                        fontSize: 15
+                    }}><Text style={{ fontWeight: 'bold', }}>Thời gian hoàn thành: </Text>
+                        18/10/2021</Text>
                 </View>
 
             </View>
