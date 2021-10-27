@@ -164,7 +164,7 @@ export default function ActivityDetail(props) {
                         fontSize: 15,
                         paddingRight: 20
                     }}>
-                        5 xe tải thùng loại 0.5 - 1 tấn</Text>
+                        1400 thùng mì</Text>
 
                 </View>
 

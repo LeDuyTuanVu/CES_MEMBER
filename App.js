@@ -21,6 +21,7 @@ import VerifyAccount from "./screen/VerifyAccount";
 import Browse from "./screen/Browse";
 import CharityDetail2 from "./screen/CharityDetail2";
 import ActivityDetail1 from "./screen/ActivityDetail1";
+import StepProgress from "./component/StepProgress";
 
 const Stack = createStackNavigator();
 
@@ -122,6 +123,13 @@ export default function App() {
           name="Member"
           component={Member}
           options={{ title: "Thành Viên" }}
+
+        // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="mission"
+          component={StepProgress}
+          options={{ title: "Hoạt động đã thực hiện" }}
 
         // options={{ headerShown: false }}
         />
