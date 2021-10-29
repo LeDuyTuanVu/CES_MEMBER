@@ -112,7 +112,7 @@ export default function App() {
         <Stack.Screen
           name="CreateSubActivity"
           component={CreateSubActivity}
-          options={{ title: 'Tạo hoạt động' }}
+          options={{ title: 'Tạo báo cáo hoạt động' }}
         />
         <Stack.Screen
           name="InfoActivity"
