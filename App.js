@@ -22,6 +22,7 @@ import Browse from "./screen/Browse";
 import CharityDetail2 from "./screen/CharityDetail2";
 import ActivityDetail1 from "./screen/ActivityDetail1";
 import StepProgress from "./component/StepProgress";
+import EditActivity from "./screen/EditActivity";
 
 const Stack = createStackNavigator();
 
@@ -132,6 +133,12 @@ export default function App() {
           options={{ title: "Báo cáo hoạt động" }}
 
         // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="edit"
+          component={EditActivity}
+          options={{ title: "Chỉnh sửa hoạt động" }}
+
         />
       </Stack.Navigator>
     </NavigationContainer>

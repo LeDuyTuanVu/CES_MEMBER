@@ -208,13 +208,14 @@ export default function CharityDetail({ navigation, route }) {
               flexDirection: "row",
               alignItems: "center",
               // justifyContent: 'center'
-              marginTop: 20,
+              marginTop: 12,
+              marginBottom: 10,
             }}
           >
             <MaterialIcons name="campaign" size={30} color="blue" />
             <Text
               style={{
-                marginTop: 10,
+                marginTop: 8,
                 fontSize: 19,
                 fontWeight: "bold",
                 marginBottom: 7,
@@ -253,9 +254,9 @@ export default function CharityDetail({ navigation, route }) {
                 thực
               </Text>
               <Text style={{ paddingVertical: 5, fontWeight: "bold" }}>
-                Loại lương thực:</Text> 
-                <Text>• 1400 thùng mì</Text>
-                <Text>• 1000 kg gạo</Text>
+                Loại lương thực:</Text>
+              <Text>• 1400 thùng mì</Text>
+              <Text>• 1000 kg gạo</Text>
               <Text style={{ paddingVertical: 5 }}>
                 <Text style={{ fontWeight: "bold" }}>Số tiền dự tính:</Text>
                 190.000.000 VND
@@ -277,7 +278,7 @@ export default function CharityDetail({ navigation, route }) {
           </View>
         </View>
       </ScrollView>
-      
+
     </View>
   );
 }

@@ -253,7 +253,7 @@ export default function StepProgress({ navigation }) {
             paddingTop: 20,
             paddingBottom: 20,
             backgroundColor: "#fff",
-            height: 250,
+            height: 270,
             shadowColor: "#000",
             shadowOffset: {
               width: 0,
@@ -388,17 +388,41 @@ export default function StepProgress({ navigation }) {
                     <Text>Người thực hiện:</Text>
                     <Text style={{ fontWeight: "bold" }}>{data2[1].owner}</Text>
                   </View>
+
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "flex-end",
+                      paddingBottom: 7,
+                      paddingTop: 8,
+                    }}
+                  >
+                    {/* <Text>Người thực hiện:</Text> */}
+                    <Pressable onPress={() => {
+                      navigation.push("edit");
+                    }} >
+                      <Text style={{
+                        fontStyle: 'italic',
+                        // color: '#FFFF00',
+                        color: 'black',
+
+                      }}>Sửa hoạt động</Text>
+                    </Pressable>
+                  </View>
+
                 </Pressable>
               );
             }}
             stepCount="1"
           />
         </View>
-        
-        
+
+
 
         <Button
           title="Tạo báo cáo hoạt động"
+          style={{ fontStyle: 'bold' }}
           onPress={() => {
             navigation.push("CreateSubActivity");
           }}
@@ -444,7 +468,7 @@ const styles = StyleSheet.create({
   lblContainer: {
     // marginTop: 20,
     paddingLeft: 20,
-    paddingRight: 35,
+    paddingRight: 6,
     width: width - 100,
     // marginBottom: 30
   },
