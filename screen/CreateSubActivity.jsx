@@ -5,6 +5,7 @@ import moment from 'moment';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import * as ImagePicker from 'expo-image-picker';
 import RBSheet from "react-native-raw-bottom-sheet";
+import * as DocumentPicker from 'expo-document-picker';
 
 export default function CreateSubActivity({ navigation }) {
     const refRBSheet = useRef();
@@ -13,6 +14,8 @@ export default function CreateSubActivity({ navigation }) {
 
     const [isDatePickerVisible2, setDatePickerVisibility2] = useState(false);
     const [dateChoose2, setDateChoose2] = useState(day)
+
+    const [dcResult, setDcResult] = useState(null);
 
 
 
@@ -1734,6 +1737,47 @@ export default function CreateSubActivity({ navigation }) {
                         }
                     </View>
 
+                    {
+                        selectedValue === 'qua' || selectedValue === 'trocap' ?
+                            <View>
+                                <View style={{
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    paddingTop: 10
+                                }}>
+                                    <AntDesign name="book" size={24} color="#024f87" />
+                                    <Text>Danh sách người nhận <Text style={{ color: 'red' }}>*</Text></Text>
+                                </View>
+
+
+                                {
+                                    dcResult?  <Text style={{
+                                        textAlign: 'center',
+                                        margin: 10,
+                                        color: '#000'
+                                    }}>{dcResult?.name}</Text> : null
+                                }
+
+
+
+                                <Pressable style={{
+                                    margin: 10
+                                }} onPress={async () => {
+                                    setDcResult (await DocumentPicker.getDocumentAsync());
+                                    console.log(dcResult);
+                                }}>
+
+                                    <Text style={{
+                                        textAlign: 'center',
+                                        textDecorationStyle: 'solid',
+                                        textDecorationColor: 'black',
+                                    }}><AntDesign name="upload" size={15} color="black" />  {!dcResult ? ' Chọn tệp' : ' Chọn tệp khác'}</Text>
+                                </Pressable>
+
+
+
+                            </View> : null
+                    }
                     <View>
                         <View style={{
                             flexDirection: 'row',
