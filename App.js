@@ -129,7 +129,7 @@ export default function App() {
         <Stack.Screen
           name="mission"
           component={StepProgress}
-          options={{ title: "Hoạt động đã thực hiện" }}
+          options={{ title: "Danh sách hoạt động" }}
 
         // options={{ headerShown: false }}
         />
