@@ -6,10 +6,11 @@ import {
   Dimensions,
   Pressable,
   ScrollView,
+  Button
 } from "react-native";
 import StepIndicator from "react-native-step-indicator";
 import { Feather, AntDesign } from "@expo/vector-icons";
-import { Button } from "react-native-paper";
+// import { Button } from "react-native-paper";
 
 const { width, height } = Dimensions.get("window");
 
@@ -89,7 +90,7 @@ export default function StepProgress({ navigation }) {
     <ScrollView>
       <View
         style={{
-          height: 350,
+          height: 380,
           // width: width - 70,
           marginBottom: 220,
           paddingLeft: 10,
@@ -393,8 +394,18 @@ export default function StepProgress({ navigation }) {
             stepCount="1"
           />
         </View>
+        
+        
+
+        <Button
+          title="Tạo báo cáo hoạt động"
+          onPress={() => {
+            navigation.push("CreateSubActivity");
+          }}
+        />
       </View>
-      <Pressable
+
+      {/* <Pressable
         style={{
           position: "absolute",
           bottom: 30,
@@ -424,7 +435,7 @@ export default function StepProgress({ navigation }) {
             color="white"
           />
         </Text>
-      </Pressable>
+      </Pressable> */}
     </ScrollView>
   );
 }

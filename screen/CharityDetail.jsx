@@ -221,7 +221,7 @@ export default function CharityDetail({ navigation, route }) {
                 marginLeft: 5,
               }}
             >
-              Hoạt động được phân công
+              Nhiệm vụ được phân công
             </Text>
           </View>
           <View style={{ height: 300, marginBottom: 50 }}>
