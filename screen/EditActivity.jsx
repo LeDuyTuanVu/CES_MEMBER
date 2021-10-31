@@ -17,8 +17,10 @@ export default function EditActivity(props) {
     const [visible, setIsVisible] = useState(false);
     const [index, setIndex] = useState(0);
     const [isDatePickerVisible2, setDatePickerVisibility2] = useState(false);
+    const [isDatePickerVisible3, setDatePickerVisibility3] = useState(false);
     const day = new Date();
     const [dateChoose2, setDateChoose2] = useState(day)
+    const [dateChoose3, setDateChoose3] = useState(day)
     const refRBSheet = useRef();
 
     const [selectedValue, setSelectedValue] = useState("doan");
@@ -1096,6 +1098,9 @@ export default function EditActivity(props) {
     const showDatePicker2 = () => {
         setDatePickerVisibility2(true);
     };
+    const showDatePicker3 = () => {
+        setDatePickerVisibility3(true);
+    };
 
     const hideDatePicker2 = () => {
         setDatePickerVisibility2(false);
@@ -1103,6 +1108,14 @@ export default function EditActivity(props) {
     const handleConfirm2 = (date) => {
         setDateChoose2(date);
         hideDatePicker2();
+    };
+
+    const hideDatePicker3 = () => {
+        setDatePickerVisibility3(false);
+    };
+    const handleConfirm3 = (date) => {
+        setDateChoose3(date);
+        hideDatePicker3();
     };
     const [image, setImage] = useState(null);
     const ModalPicker = () => {
@@ -2316,7 +2329,7 @@ export default function EditActivity(props) {
                     <AntDesign name="clockcircleo" size={20} color="#024f87" />
                     <Text style={{ marginLeft: 5 }}>Thời gian <Text style={{ color: 'red' }}>*</Text></Text>
                 </View> */}
-                <Pressable onPress={showDatePicker2}>
+                <Pressable onPress={showDatePicker3}>
                     <Text style={{
                         borderWidth: 1,
                         borderColor: 'gray',
@@ -2330,16 +2343,16 @@ export default function EditActivity(props) {
                         marginTop: 10,
                         paddingLeft: 15
                     }}>
-                        Vào lúc {moment(dateChoose2).format('hh:mmA ')}
-                        - {moment(dateChoose2).format('DD/MM/YYYY ')}
+                        Vào lúc {moment(dateChoose3).format('hh:mmA ')}
+                        - {moment(dateChoose3).format('DD/MM/YYYY ')}
                     </Text>
                 </Pressable>
                 <DateTimePickerModal
-                    isVisible={isDatePickerVisible2}
+                    isVisible={isDatePickerVisible3}
                     mode="datetime"
-                    onConfirm={handleConfirm2}
-                    onCancel={hideDatePicker2}
-                    date={dateChoose2}
+                    onConfirm={handleConfirm3}
+                    onCancel={hideDatePicker3}
+                    date={dateChoose3}
                 />
             </View>
 
